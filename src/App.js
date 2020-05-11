@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import axios from 'axios';
+import Modal from './components/modal/Modals';
+import{Container,Row,Col} from 'react-bootstrap';
+import Answer from './components/answer/Answer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends Component {
+
+  constructor(){
+    super()
+    this.state={
+      open:true
+    }
+  }
+
+  componentDidMount(){
+   
+  }
+
+  render() {
+    return (
+      <div>
+        <Modal open={this.state.open}></Modal>
+       <Container>
+         <Row>
+         <Col><Answer></Answer></Col>
+         </Row>
+       </Container>
+      </div>
+    )
+  }
 }
 
-export default App;
